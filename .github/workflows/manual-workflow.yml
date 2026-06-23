@@ -21,4 +21,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run manual workflow
-        run: echo "Running manual workflow with environment: ${{ github.event.inputs.environment }} and version: ${{ github.event.inputs.version }}"
+        run: |
+          echo "Running manual workflow with environment: ${{ github.event.inputs.environment }} and version: ${{ github.event.inputs.version }}"

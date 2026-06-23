@@ -2,19 +2,19 @@ name: workflow dispatcher
 on: 
   workflow_dispatch:
     inputs:
-        environment:
-            description: 'Select the environment'
-            required: true
-            default: 'dev'
-            type: choice
-            options:
-                - staging
-                - production
-        version:
-            description: 'Specify the version'
-            required: true
-            default: '1.0.0'
-            type: string
+      environment:
+        description: 'Select the environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - staging
+          - production
+      version:
+        description: 'Specify the version'
+        required: true
+        default: '1.0.0'
+        type: string
 
 jobs:
   manual-workflow:

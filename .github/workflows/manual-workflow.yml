@@ -1,20 +1,6 @@
 name: workflow dispatcher
 on: 
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Select the environment'
-        required: true
-        default: 'dev'
-        type: choice
-        options:
-          - staging
-          - production
-      version:
-        description: 'Specify the version'
-        required: true
-        default: '1.0.0'
-        type: string
+  push:
 
 jobs:
   manual-workflow:
@@ -22,5 +8,4 @@ jobs:
     steps:
       - name: Run manual workflow
         run: |
-          echo "Running manual workflow with environment: ${{ github.event.inputs.environment }}"
-          echo "Version: ${{ github.event.inputs.version }}"
+          echo "This is a manual workflow triggered by a push event."

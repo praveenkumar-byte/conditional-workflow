@@ -1,6 +1,8 @@
 name: Conditional CI Pipeline
 on:
     push:
+      branches:
+        - 'feature/any-feature-branch'
 
 jobs:
   build:                       
@@ -15,4 +17,4 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/feature/') && success()
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Running tests for feature branch!"
+      - run: echo "Running tests for feature branch!khefkhsk"

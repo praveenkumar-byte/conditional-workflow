@@ -1,11 +1,8 @@
 name: Conditional CI Pipeline
-on: workflow_dispatch:
-  inputs:
-    run_tests:
-      description: 'Run tests for feature branches'
-      required: true
-      default: 'false'
-      type: boolean
+on:
+    push:
+      branches:
+        - 'feature/any-feature-branch'
 
 jobs:
   build:                       

@@ -1,0 +1,26 @@
+name: workflow dispatcher
+on: 
+  workflow_dispatch:
+    inputs:
+        environment:
+          description: 'Select any environment to deploy'
+          required: true
+          default: 'dev'
+          type: choice
+          options:
+            - dev
+            - staging
+            - prod
+        # version:
+        #   description: 'Enter the version to deploy'
+        #   required: true
+        #   default: '1.0.0'
+        #   type: string
+
+jobs:
+  manual-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run manual workflow
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"

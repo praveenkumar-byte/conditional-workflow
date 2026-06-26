@@ -24,6 +24,7 @@ jobs:
     strategy:
       matrix:
         language: [ javascript, python, java ]
+      fail-fast: false
     permissions:
       contents: read
       security-events: write
